@@ -1,3 +1,7 @@
+* {
+  box-sizing: border-box;
+}
+
 .station-names {
   display: flex;
   flex-direction: column;
@@ -6,4 +10,26 @@
 .station-box {
   border: 1px solid black;
   width: 100%;
+  margin: auto;
+}
+
+.review-container {
+  display: flex;
+  align-content: center;
+}
+
+.title-box {
+  margin: auto;
+  max-width: 600px;
+  min-height: 50px;
+  max-height: 50px;
+  border-radius: 10px;
+}
+.comment-box {
+  margin: auto;
+  max-width: 600px;
+  min-width: 600px;
+  min-height: 100px;
+  max-height: 100px;
+  border-radius: 10px;
 }

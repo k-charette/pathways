@@ -17,25 +17,23 @@ const StationInfoTile = props => {
     .then(response => response.json())
     .then(fetchedData => {
       setStations(fetchedData)
-      // setLoadComplete(true)
     })
   }, [])
 
   let stationInfo;
 
   if (stations.data !== undefined) {
-    stationInfo =  stations.data.stations.map((station) => {
+    stationInfo = stations.data.stations.map((station) => {
       return(
         <div className="station-box" key={station.station_id}>
-          <h5> {station.station_id} - {station.name} </h5>
+          <p> {station.station_id} - {station.name} </p>
         </div>
         )
       })
   } else {
-    stationInfo = <h1> no </h1>
+    stationInfo = <h1> Information Not Available </h1>
   }
 
-  console.log("Station Info Tile", stations)
   return (
     <div>
       { stationInfo }
