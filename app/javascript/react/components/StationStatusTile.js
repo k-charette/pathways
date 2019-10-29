@@ -24,17 +24,17 @@ let stationAvailability;
 
 if (stationsStatus.data !== undefined) {
   stationAvailability =  stationsStatus.data.stations.map((station) => {
-    const lastUpdated = new Date(station.last_reported * 1000).toDateString()
-    console.log(lastUpdated)
-      return(
-        <div className="station-box" key={station.station_id}>
-          <h5> Id: {station.station_id} / Number of Bikes Available: {station.num_bikes_available} / Number of Docks Available: {station.num_docks_available} --
-          {lastUpdated}</h5>
-        </div>
+  const lastUpdated = new Date(station.last_reported * 1000).toDateString()
+    return(
+      <div className="station-box" key={station.station_id}>
+        <p> Id: {station.station_id} / Number of Bikes Available: {station.num_bikes_available} / Number of Docks Available: {station.num_docks_available} --
+        {lastUpdated}
+        </p>
+      </div>
       )
     })
 } else {
-  <h1> no </h1>
+  <h1> Information Not Available </h1>
 }
 
   return (
