@@ -2,27 +2,28 @@ import React, { useState, useEffect } from "react"
 import { Link } from "react-router-dom"
 
 const StationFormContainer = props => {
-  const [newComment, setNewComment] = useState({
+  const [newReview, setNewReview] = useState({
+    rating: "",
     title: "",
-    comment: "",
-    rating: ""
+    body: "",
+    stationId: props.stationId
   })
 
-  const addNewComment = event => {
+  const addNewReview = (event) => {
     event.preventDefault()
-    setNewComment({
-      ...newComment, [event.currentTarget.id]: event.currentTarget.value
+    setNewReview({
+      ...newReview, [event.currentTarget.id]: event.currentTarget.value
     })
   }
 
-  const formSubmit = event => {
+  const formSubmit = (event) => {
     event.preventDefault()
-    let commentPayload = newComment
-    props.postNewComment(commentPayload)
-    setNewComment({
+    let reviewPayload = newReview
+    props.postNewReview(reviewPayload)
+    setNewReview({
+      rating: "",
       title: "",
-      comment: "",
-      rating: ""
+      body: "",
     })
   }
 
@@ -38,18 +39,17 @@ const StationFormContainer = props => {
                 name="title"
                 type="text"
                 placeholder="Title"
-                value={newComment.title}
-                onChange={addNewComment}
-              />
-            <label htmlFor="comment"> Comment </label>
+                value={newReview.title}
+                onChange={addNewReview}
+              /><label htmlFor="body"> Body </label>
               <input
-                className="comment-box"
-                id="comment"
-                name="comment"
+                className="review-box"
+                id="body"
+                name="body"
                 type="text"
-                placeholder="Comment"
-                value={newComment.comment}
-                onChange={addNewComment}
+                placeholder="Review"
+                value={newReview.body}
+                onChange={addNewReview}
               />
             <label htmlFor="rating"> Rating </label>
               <input
@@ -58,14 +58,14 @@ const StationFormContainer = props => {
                 name="rating"
                 type="number"
                 placeholder= "0"
-                value={newComment.rating}
-                onChange={addNewComment}
+                value={newReview.rating}
+                onChange={addNewReview}
               />
             <div className="button-box">
               <input
                 className="button"
                 type="submit"
-                value="Submit Comment"
+                value="Submit Review"
               />
             </div>
           </form>

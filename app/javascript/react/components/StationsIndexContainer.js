@@ -86,8 +86,8 @@ const StationsIndexContainer = props => {
         <span className="nav-bar">
           <Link to="/"> Pathways </Link> <br/>
         </span>
-        <span className="choose-station">
-          Choose Your Station
+        <span className="find-station">
+          Find a Bike Station
         </span>
       </h2>
       <div className="what-can-you-do cell">
@@ -100,10 +100,10 @@ const StationsIndexContainer = props => {
           </div>
         </div>
       </div>
-      <div className="small-6">
+      <div className="cell small-6 large-6">
         {stationInfo}
       </div>
-      <div className="small-6">
+      <div className="cell small-6 large-6">
         {stationAvailability}
       </div>
     </div>

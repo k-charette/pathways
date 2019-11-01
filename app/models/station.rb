@@ -3,6 +3,6 @@ class Station < ApplicationRecord
   validates :available_bikes, presence: true
   validates :available_docks, presence: true
 
-  has_many :comments
-  has_many :users, through: :comments
+  has_many :reviews
+  has_many :users, through: :reviews
 end

@@ -10,31 +10,29 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_10_31_145636) do
+ActiveRecord::Schema.define(version: 2019_11_01_143228) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "comments", force: :cascade do |t|
-    t.string "title", null: false
-    t.text "comment", null: false
-    t.integer "rating"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "reviews", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "station_id"
+    t.integer "rating", null: false
     t.string "title", null: false
-    t.text "comment", null: false
-    t.integer "rating"
+    t.string "body", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["station_id"], name: "index_reviews_on_station_id"
+    t.index ["user_id"], name: "index_reviews_on_user_id"
   end
 
   create_table "stations", force: :cascade do |t|
     t.string "name", null: false
     t.integer "available_bikes", null: false
     t.integer "available_docks", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade do |t|

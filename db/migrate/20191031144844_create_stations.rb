@@ -4,7 +4,8 @@ class CreateStations < ActiveRecord::Migration[5.2]
       t.string :name, null: false
       t.integer :available_bikes, null: false
       t.integer :available_docks, null: false
-      
+
+      t.timestamps
     end
   end
 end
