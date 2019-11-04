@@ -75,22 +75,22 @@ const StationShowContainer = props => {
   })
 
 return(
-<div>
-  <div>
-    <StationShow
-      key={station.id}
-      id={station.id}
-      name={station.name}
-    />
-  </div>
-  <div>
-    <StationFormContainer
-      stationId={props.stationId}
-      postNewReview={postNewReview}
-    />
-  </div>
-  <div>
-    { reviewTile }
+<div className="grid-x grid-padding-x">
+  <div className="cell small-12">
+    <div>
+      <StationShow
+        key={station.id}
+        id={station.id}
+        name={station.name}
+      />
+    </div>
+    <div className="callout primary form-comment-box">
+      <StationFormContainer
+        stationId={props.stationId}
+        postNewReview={postNewReview}
+      />
+      { reviewTile }
+    </div>
   </div>
 </div>
   )

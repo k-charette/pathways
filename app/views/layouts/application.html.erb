@@ -9,16 +9,15 @@
 <body>
 
   <nav class="top-bar">
-    <section class="top-bar-section">
-      <div class="right">
-        <%- if current_user -%>
-          <%= link_to 'Sign Out', destroy_user_session_path, method: :delete %>
-        <%- else -%>
-          <%= link_to 'Sign Up', new_user_registration_path %>
-          <%= link_to 'Sign In', new_user_session_path %>
-        <%- end -%>
-      </div>
-    </section>
+    <h1 class="header-title"><a href="/" class="header-title-text">Pathways</a></h1>
+      <section class="top-bar-section">
+          <%- if current_user -%>
+            <%= link_to 'Sign Out', destroy_user_session_path, method: :delete %>
+          <%- else -%>
+            <%= link_to 'Sign Up', new_user_registration_path %>
+            <%= link_to 'Sign In', new_user_session_path %>
+          <%- end -%>
+      </section>
   </nav>
 
   <%- flash.each do |key, value| -%>

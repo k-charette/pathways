@@ -29,8 +29,8 @@ const StationFormContainer = props => {
 
   return (
     <div className="grid-x grid-padding-x">
-      <div className="cell small-12 medium-6">
-        <div className="callout primary">
+      <div className="cell">
+        <div className="form-box">
           <form onSubmit={formSubmit} className="review-form">
             <label htmlFor="title">Title </label>
               <input
@@ -47,7 +47,7 @@ const StationFormContainer = props => {
                 id="body"
                 name="body"
                 type="text"
-                placeholder="Review"
+                placeholder="Comment"
                 value={newReview.body}
                 onChange={addNewReview}
               />

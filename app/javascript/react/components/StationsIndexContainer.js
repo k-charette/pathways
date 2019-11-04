@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import StationInfoTile from "./StationInfoTile"
 import StationStatusTile from "./StationStatusTile"
 import StationFormContainer from "./StationFormContainer"
+import MapContainer from "./MapContainer"
 import bikeImage from "./bikes1.jpg"
 import bikeImage2 from "./bikes2.jpg"
 
@@ -32,11 +33,18 @@ const StationsIndexContainer = props => {
   if (stations.data !== undefined) {
     stationInfo = stations.data.stations.map((station) => {
       return(
+        <div>
           <StationInfoTile
             key={station.station_id}
             id={station.station_id}
             name={station.name}
           />
+          <MapContainer
+            key={station.station_id}
+            id={station.station_id}
+            name={station.name}
+          />
+        </div>
         )
       })
   } else {
@@ -83,28 +91,29 @@ const StationsIndexContainer = props => {
     <div className="grid-x grid-padding-x">
       <img className="front-page-image" src={bikeImage} />
       <h2>
-        <span className="nav-bar">
-          <Link to="/"> Pathways </Link> <br/>
-        </span>
         <span className="find-station">
-          Find a Bike Station
+          Find a Bike Station <br/>
+          <button className="button">
+            <span className="btn-text"> Get Started </span>
+
+          </button>
         </span>
+        <div className="middle-button">
+        </div>
       </h2>
       <div className="what-can-you-do cell">
         <div className="middle-box">
           <h2>
-            <span className="middle-text"> What Can You Do </span>
+            <span className="middle-text">  </span>
           </h2>
-          <div className="middle-button">
-            <button className="button"> Get Started </button>
-          </div>
         </div>
       </div>
       <div className="cell small-6 large-6">
-        {stationInfo}
+        <MapContainer />
+
       </div>
       <div className="cell small-6 large-6">
-        {stationAvailability}
+
       </div>
     </div>
   )

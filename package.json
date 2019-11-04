@@ -14,10 +14,12 @@
     "@babel/runtime": "^7.6.2",
     "@rails/webpacker": "3.5",
     "babel-loader": "^8.0.6",
+    "google-maps-react": "^2.0.2",
     "js-yaml": "^3.13.1",
     "prop-types": "~15.6.0",
     "react": "~16.8.0",
     "react-dom": "~16.8.0",
+    "react-google-maps": "^9.4.5",
     "react-router-dom": "5.0.0",
     "redbox-react": "1.6.0"
   },
