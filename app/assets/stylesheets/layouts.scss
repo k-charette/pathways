@@ -11,8 +11,10 @@ $navajo: #FFE1A8;
 $dusty: #D62246;
 $sunset: #F25F5C;
 
-body {
+html, body {
   background-color: $gray;
+  max-width: 100%;
+  overflow-x: hidden;
 }
 
 a {
@@ -51,13 +53,15 @@ a:hover {
 }
 
 .find-station {
-  display: block;
+  display: inline-block;
+  justify-content: center;
+  font-size: 30px;
   height: auto;
   color: white;
   font-weight: 400;
   padding: 0px;
   position: absolute;
-  top: 200px;
+  top: 130px;
   left: 0px;
   text-align: center;
   width: 100%;
@@ -127,7 +131,7 @@ a:hover {
 }
 
 .button {
-  margin-top: 70px;
+  margin-top: 10px;
   border-style: solid;
   background-color: black;
   border-color: black;
@@ -135,5 +139,9 @@ a:hover {
 
 .btn-text {
   font-weight: 400;
-  font-size: 24px;
+  font-size: 20px;
+}
+
+.map {
+  margin-top: 20px;
 }
