@@ -1,19 +1,27 @@
 import React, { useState, useEffect } from "react"
-import StationInfoTile from "./StationInfoTile"
+import { Link } from "react-router-dom";
 import StationStatusTile from "./StationStatusTile"
-import StationShowContainer from "./StationShowContainer"
+import StationFormContainer from "./StationFormContainer"
+import MapContainer from "./MapContainer"
+import StationInfoTile from "./StationInfoTile"
+import bikeImage from "./bikes1.jpg"
+import bikeImage2 from "./bikes2.jpg"
 
 const StationsIndexContainer = props => {
 
   return (
-    <div className="grid-x small-4 medium-6 large-8">
-      <div className="station-names">
-        <StationInfoTile
-        />
-      </div>
-      <div className="station-names">
-        <StationStatusTile
-        />
+    <div className="grid-x grid-padding-x">
+      <img className="front-page-image" alt="image of bikes" src={bikeImage} />
+      <h2>
+        <span className="find-station">
+          <h1> Find a Bike Station </h1> <br/>
+          <button className="button">
+            <span className="btn-text"> Get Started </span>
+          </button>
+        </span>
+      </h2>
+      <div className="cell small-6 large-6 map">
+        <MapContainer />
       </div>
     </div>
   )

@@ -1,1 +1,1 @@
-A bike share information app by Ken Charette. 
+A bike share information app by Ken Charette.

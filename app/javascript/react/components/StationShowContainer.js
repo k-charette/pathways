@@ -1,55 +1,98 @@
 import React, { useState, useEffect } from "react"
-import StationInfoTile from "./StationInfoTile"
+import { Redirect } from 'react-router-dom'
+import StationFormContainer from "./StationFormContainer"
+import StationShow from "./StationShow"
+import ReviewTile from "./ReviewTile"
 
 const StationShowContainer = props => {
-  return (
-    <div className="review-container">
-      <form className="review-form">
-        <label htmlFor="title">
-          <div>
-            <h2> Title:</h2>
-            <input
-              className="title-box"
-              id="title"
-              name="title"
-              type="text"
-              placeholder="Enter title here."
-            />
-          </div>
-        </label>
-        <label htmlFor="comment">
-          <div>
-            <h2> Comment:</h2>
-              <textarea
-                className="comment-box"
-                id="comment"
-                name="comment"
-                type="text"
-                placeholder="Enter comment here."
-              />
-          </div>
-        </label>
-        <label htmlFor="rating">
-          <div>
-            <h2> Rating:</h2>
-            <input
-              className="rating-box"
-              id="rating"
-              name="rating"
-              type="number"
-              placeholder="Enter rating here."
-            />
-          </div>
-        </label>
-        <div className="button-group">
-          <input
-            className="button"
-            type="submit"
-            value="Submit Comment"
-          />
-        </div>
-      </form>
+  const [station, setStation] = useState({})
+  const [reviews, setReviews] = useState([])
+  const [errors, setErrors] = useState({})
+
+  const stationId = props.match.params.id
+
+  useEffect(() => {
+    fetch(`/api/v1/stations/${stationId}`)
+    .then((response) => {
+      if(response.ok) {
+        return response
+      } else {
+        let errorMessage = `${response.status} (${response.statusText})`,
+          error = new Error(errorMessage)
+          throw(error)
+      }
+    })
+    .then(response => response.json())
+    .then(fetchedStation => {
+      setStation(fetchedStation.station)
+      setReviews(fetchedStation.reviews)
+    })
+  }, [])
+
+  const postNewReview = (postReview) => {
+    postReview.stationId = stationId
+      fetch(`/api/v1/stations/${stationId}/reviews`, {
+        credentials: "same-origin",
+        method: "POST",
+        body: JSON.stringify(postReview),
+        headers: {
+          "accept": "application/json",
+          "Content-Type": "application/json",
+          'X-Requested-With': 'XMLHttpRequest',
+          'X-CSRF-Token': $('meta[name=csrf-token]').attr('content')
+        }
+      })
+      .then(response => {
+        if (response.ok) {
+          return response
+        } else {
+          const errorMessage = `${response.status} (${response.statusText})`
+          const error = new Error(errorMessage)
+          throw error
+        }
+      })
+      .then(response => response.json())
+      .then(body => {
+        if (body.station) {
+            setReviews(body.reviews)
+          } else {
+            setErrors(body.errors)
+          }
+        })
+      .catch(error => console.error(`Error in fetch: ${error.message}`))
+  }
+
+  let reviewTile = reviews.map(review => {
+    return (
+      <ReviewTile
+        key={review.id}
+        id={review.id}
+        rating={review.rating}
+        title={review.title}
+        body={review.body}
+      />
+    )
+  })
+
+return(
+<div className="grid-x grid-padding-x">
+  <div className="cell small-12">
+    <div>
+      <StationShow
+        key={station.id}
+        id={station.id}
+        name={station.name}
+      />
     </div>
+    <div className="callout primary form-comment-box">
+      <StationFormContainer
+        stationId={props.stationId}
+        postNewReview={postNewReview}
+      />
+      { reviewTile }
+    </div>
+  </div>
+</div>
   )
 }
 

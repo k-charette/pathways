@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react"
-
 const StationInfoTile = props => {
   const [stations, setStations] = useState({})
 
@@ -15,8 +14,8 @@ const StationInfoTile = props => {
       }
     })
     .then(response => response.json())
-    .then(fetchedData => {
-      setStations(fetchedData)
+    .then(fetchedInfo => {
+      setStations(fetchedInfo)
     })
   }, [])
 
@@ -25,8 +24,10 @@ const StationInfoTile = props => {
   if (stations.data !== undefined) {
     stationInfo = stations.data.stations.map((station) => {
       return(
-        <div className="station-box" key={station.station_id}>
-          <p> {station.station_id} - {station.name} </p>
+        <div key={station.station_id}>
+          <p>
+            Station Name: {station.name}
+          </p>
         </div>
         )
       })
@@ -36,7 +37,7 @@ const StationInfoTile = props => {
 
   return (
     <div>
-      { stationInfo }
+      {stationInfo}
     </div>
   )
 }

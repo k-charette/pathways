@@ -1,0 +1,19 @@
+@import 'foundation';
+@import 'util/color';
+@include add-foundation-colors;
+
+.review-container {
+  border: 1px solid black;
+  margin: auto;
+  align-items: center;
+  background-color: #fff;
+  padding: 20px;
+}
+
+.form-box {
+  border-radius: 30px;
+}
+
+.title .comment .rating {
+  
+}

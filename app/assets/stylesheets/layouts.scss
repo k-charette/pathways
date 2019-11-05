@@ -1,35 +1,147 @@
-* {
-  box-sizing: border-box;
+@import 'foundation';
+@import 'util/color';
+@include add-foundation-colors;
+$light-cyan: #E0FBFC;
+$light-gray: #CFDBD5;
+$platinum: #E8EDDF;
+$yellow: #F5CB5C;
+$gold: #FFB400;
+$gray: #F8F9FA;
+$navajo: #FFE1A8;
+$dusty: #D62246;
+$sunset: #F25F5C;
+
+html, body {
+  background-color: $gray;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+a {
+  color: #fff;
+}
+
+a:hover {
+  color: $light-cyan;
+}
+
+.top-bar {
+  background: rgb(0, 0, 0);
+  padding-top: 25px 5px 0 5px;
+}
+
+.nav-bar {
+  display: block;
+  height: auto;
+  color: white;
+  padding: 10px;
+  position: absolute;
+  left: 0px;
+  width: 100%;
+  text-decoration: none;
+  background: rgb(0, 0, 0);
+  background: rgba(0, 0, 0, 0.7);
+}
+
+.flash {
+  background: rgb(0, 0, 0);
+}
+
+.flash-alert {
+  color: white;
+  padding-left: 9px;
+}
+
+.find-station {
+  display: inline-block;
+  justify-content: center;
+  font-size: 30px;
+  height: auto;
+  color: white;
+  font-weight: 400;
+  padding: 0px;
+  position: absolute;
+  top: 130px;
+  left: 0px;
+  text-align: center;
+  width: 100%;
+  text-decoration: none;
+  text-shadow:
+		-1px -1px 0 #000,
+		1px -1px 0 #000,
+		-1px 1px 0 #000,
+		1px 1px 0 #000;
 }
 
 .station-names {
-  display: flex;
-  flex-direction: column;
-}
-
-.station-box {
   border: 1px solid black;
-  width: 100%;
+  margin-bottom: 0;
+  width: 50%;
+}
+
+.station-info {
+  border: 1px solid black;
+  width: 50%;
   margin: auto;
 }
 
-.review-container {
-  display: flex;
-  align-content: center;
+.review-form {
+  margin: auto;
+  border-radius: 10px;
 }
-
 .title-box {
-  margin: auto;
-  max-width: 600px;
-  min-height: 50px;
-  max-height: 50px;
   border-radius: 10px;
 }
-.comment-box {
-  margin: auto;
-  max-width: 600px;
-  min-width: 600px;
-  min-height: 100px;
-  max-height: 100px;
+.review-box {
   border-radius: 10px;
+}
+
+.rating-box {
+  max-width: 20%
+}
+
+.button {
+  border-radius: 10px;
+  background-color: $gray;
+}
+
+.front-page-image {
+  position: relative;
+  height: auto;
+  width: 100%;
+  background-size: cover;
+}
+
+.what-can-you-do {
+  background-color: $gray;
+}
+
+.middle-box {
+  width: 50%;
+  padding: 0 14px;
+  height: auto;
+  margin: auto;
+  line-height: 38px;
+  align-items: center;
+}
+
+.middle-button .button {
+  margin-bottom: 0;
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
+
+.button {
+  margin-top: 10px;
+  border-style: solid;
+  background-color: black;
+  border-color: black;
+}
+
+.btn-text {
+  font-weight: 400;
+  font-size: 20px;
+}
+
+.map {
+  margin-top: 20px;
 }
