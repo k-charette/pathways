@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react"
+
 const StationInfoTile = props => {
   const [stations, setStations] = useState({})
 
@@ -24,11 +25,13 @@ const StationInfoTile = props => {
   if (stations.data !== undefined) {
     stationInfo = stations.data.stations.map((station) => {
       return(
-        <div key={station.station_id}>
-          <p>
-            Station Name: {station.name}
-          </p>
-        </div>
+        <MapContainer
+          key={station.station_id}
+          id={station.station_id}
+          name={station.name}
+          lat={station.lat}
+          lon={station.lon}
+        />
         )
       })
   } else {
@@ -43,3 +46,12 @@ const StationInfoTile = props => {
 }
 
 export default StationInfoTile
+
+
+// <div key={station.station_id}>
+//   <p>
+//     Station Name: {station.name} <br/>
+//     Lat: {station.lat} <br/>
+//     Lon: {station.lon}
+//   </p>
+// </div>

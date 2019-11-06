@@ -10,6 +10,7 @@ $gray: #F8F9FA;
 $navajo: #FFE1A8;
 $dusty: #D62246;
 $sunset: #F25F5C;
+$cerulean: #00A8E8;
 
 html, body {
   background-color: $gray;
@@ -22,12 +23,31 @@ a {
 }
 
 a:hover {
-  color: $light-cyan;
+  color: $cerulean;
 }
 
 .top-bar {
   background: rgb(0, 0, 0);
   padding-top: 25px 5px 0 5px;
+}
+
+.top-bar-section {
+  padding: 10px;
+  font-size: 20px;
+  margin: 5px;
+}
+
+.sign-up {
+  border: 1px solid white;
+  padding: 2px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+.log-in {
+  margin-top: 10px;
+  border: 1px solid white;
+  padding-left: 10px;
 }
 
 .nav-bar {
@@ -131,10 +151,14 @@ a:hover {
 }
 
 .button {
-  margin-top: 10px;
+  margin-top: 5px;
   border-style: solid;
   background-color: black;
   border-color: black;
+}
+
+.button:hover {
+  background-color: $cerulean;
 }
 
 .btn-text {

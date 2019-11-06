@@ -12,10 +12,14 @@
     <h1 class="header-title"><a href="/" class="header-title-text">Pathways</a></h1>
       <section class="top-bar-section">
           <%- if current_user -%>
-            <%= link_to 'Sign Out', destroy_user_session_path, method: :delete %>
+            <%= link_to 'Log Out', destroy_user_session_path, method: :delete %>
           <%- else -%>
+        <section class="sign-up">
             <%= link_to 'Sign Up', new_user_registration_path %>
-            <%= link_to 'Sign In', new_user_session_path %>
+        </section>
+        <section class="log-in">
+            <%= link_to 'Log In', new_user_session_path %>
+        </section>
           <%- end -%>
       </section>
   </nav>
