@@ -42,7 +42,7 @@ const StationFormContainer = props => {
                 value={newReview.title}
                 onChange={addNewReview}
               /><label htmlFor="body"> Body </label>
-              <input
+              <textarea
                 className="review-box"
                 id="body"
                 name="body"

@@ -4,6 +4,7 @@ import StationsIndexContainer from "./StationsIndexContainer"
 import StationFormContainer from "./StationFormContainer"
 import StationShowContainer from "./StationShowContainer"
 import StationInfoTile from "./StationInfoTile"
+import StationTile from "./StationTile"
 import MapContainer from "./MapContainer"
 
 export const App = (props) => {

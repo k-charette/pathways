@@ -3,14 +3,11 @@ import StationInfoTile from "./StationInfoTile"
 import { Map, GoogleApiWrapper, Marker, InfoWindow } from "google-maps-react"
 
 const MapContainer = props => {
+
   const [markerInfo, setMarkerInfo] = useState({
     showingInfoWindow: false,
     activeMarker: {},
     selectedPlace: {}
-  })
-
-  const [stationLocation, setStationLocation] = useState({
-
   })
 
   const mapStyles = {
@@ -38,23 +35,32 @@ const MapContainer = props => {
     })
   }
 
+  const pos = {
+    lat: 42.341814, lng: -71.090179
+  }
+
   return (
+    <div>
       <Map
         google={props.google}
         onClick={mapClick}
-        zoom={14}
+        zoom={13}
         style={mapStyles}
         initialCenter={{ lat: 42.361488, lng: -71.070264 }}
       >
         <Marker
+          className="marker"
           onClick={markerClick}
-          title={'The station with the most bikes.'}
           name={'Tremont St at E Berkeley St'}
           position={{ lat: 42.345392, lng: -71.069616 }}
+          icon={{
+            url: "https://image.flaticon.com/icons/png/128/130/130276.png",
+            anchor: new google.maps.Point(32,32),
+            scaledSize: new google.maps.Size(40,40)
+          }}
         />
         <Marker
           onClick={markerClick}
-          title={'I love this station.'}
           name={'Colleges of the Fenway - Fenway at Avenue Louis Pasteur'}
           position={{ lat: 42.34011512249236, lng: -71.10061883926392 }}
         />
@@ -62,12 +68,12 @@ const MapContainer = props => {
           marker={markerInfo.activeMarker}
           visible={markerInfo.showingInfoWindow}
         >
-          <div>
-            <h4> {markerInfo.selectedPlace.name} </h4>
-            <h6> {markerInfo.selectedPlace.title} </h6>
+          <div className="station-info-box">
+            <p> {markerInfo.selectedPlace.name} </p>
           </div>
         </InfoWindow>
       </Map>
+    </div>
   )
 }
 

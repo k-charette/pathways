@@ -3,8 +3,8 @@ import React from "react"
 const ReviewTile = props => {
   return (
     <div className="grid-x grid-padding-x">
-      <div className="">
-        <div className="">
+      <div className="cell">
+        <div className="review-box">
           <div className="review-container">
             <div className="title"> Title: {props.title} </div>
             <div className="comment"> Comment: {props.body} </div>

@@ -23,7 +23,7 @@ a {
 }
 
 a:hover {
-  color: $cerulean;
+  color: $gold;
 }
 
 .top-bar {
@@ -37,6 +37,10 @@ a:hover {
   margin: 5px;
 }
 
+.header-title-text {
+  font-size: 40px;
+}
+
 .sign-up {
   border: 1px solid white;
   padding: 2px;
@@ -46,7 +50,6 @@ a:hover {
 
 .log-in {
   margin-top: 10px;
-  border: 1px solid white;
   padding-left: 10px;
 }
 
@@ -132,33 +135,12 @@ a:hover {
   background-size: cover;
 }
 
-.what-can-you-do {
-  background-color: $gray;
-}
-
-.middle-box {
-  width: 50%;
-  padding: 0 14px;
-  height: auto;
-  margin: auto;
-  line-height: 38px;
-  align-items: center;
-}
-
-.middle-button .button {
-  margin-bottom: 0;
-  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
-}
-
 .button {
   margin-top: 5px;
   border-style: solid;
   background-color: black;
   border-color: black;
-}
-
-.button:hover {
-  background-color: $cerulean;
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
 }
 
 .btn-text {
@@ -167,5 +149,5 @@ a:hover {
 }
 
 .map {
-  margin-top: 20px;
+  margin-top: 25px;
 }
