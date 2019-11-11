@@ -11,7 +11,7 @@ const MapContainer = props => {
   })
 
   const mapStyles = {
-    width: "80%",
+    width: "70%",
     height: "55%",
     border: "1px solid #000",
     margin: "auto",

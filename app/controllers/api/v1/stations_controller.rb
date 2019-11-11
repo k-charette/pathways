@@ -14,7 +14,6 @@ class Api::V1::StationsController < ApplicationController
       lat = station["lat"]
       lon = station["lon"]
       capacity = station["capacity"]
-
     end
 
     render json: stationInfo

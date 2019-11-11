@@ -11,11 +11,15 @@ $navajo: #FFE1A8;
 $dusty: #D62246;
 $sunset: #F25F5C;
 $cerulean: #00A8E8;
+$gunmetal: #2F323A;
+$ivory: #FFFFF2;
 
 html, body {
-  background-color: $gray;
+  background-color: $gunmetal;
   max-width: 100%;
   overflow-x: hidden;
+  vertical-align: middle;
+  color: $ivory;
 }
 
 a {
@@ -27,7 +31,7 @@ a:hover {
 }
 
 .top-bar {
-  background: rgb(0, 0, 0);
+  background-color: $gunmetal;
   padding-top: 25px 5px 0 5px;
 }
 
@@ -62,8 +66,7 @@ a:hover {
   left: 0px;
   width: 100%;
   text-decoration: none;
-  background: rgb(0, 0, 0);
-  background: rgba(0, 0, 0, 0.7);
+  background-color: $gunmetal;
 }
 
 .flash {
@@ -77,6 +80,7 @@ a:hover {
 
 .find-station {
   display: inline-block;
+  line-height: 86px;
   justify-content: center;
   font-size: 30px;
   height: auto;
@@ -84,7 +88,7 @@ a:hover {
   font-weight: 400;
   padding: 0px;
   position: absolute;
-  top: 130px;
+  top: 150px;
   left: 0px;
   text-align: center;
   width: 100%;
@@ -125,14 +129,15 @@ a:hover {
 
 .button {
   border-radius: 10px;
-  background-color: $gray;
+  background-color: $gunmetal;
 }
 
 .front-page-image {
   position: relative;
+  justify-content: center;
   height: auto;
-  width: 100%;
-  background-size: cover;
+  width: 80%;
+  margin: 0 auto;
 }
 
 .button {
@@ -150,4 +155,11 @@ a:hover {
 
 .map {
   margin-top: 25px;
+}
+
+.flash {
+  color: white;
+  font-size: 20px;
+  font-weight: 800;
+  font-family: sans-serif;
 }

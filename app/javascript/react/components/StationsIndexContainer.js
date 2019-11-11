@@ -5,7 +5,6 @@ import StationFormContainer from "./StationFormContainer"
 import MapContainer from "./MapContainer"
 import StationInfoTile from "./StationInfoTile"
 import bikeImage from "./bikes1.jpg"
-import bikeImage2 from "./bikes2.jpg"
 
 const StationsIndexContainer = props => {
 

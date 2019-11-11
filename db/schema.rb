@@ -16,11 +16,11 @@ ActiveRecord::Schema.define(version: 2019_11_09_205800) do
   enable_extension "plpgsql"
 
   create_table "reviews", force: :cascade do |t|
+    t.string "title", null: false
+    t.text "body", null: false
+    t.integer "rating"
     t.bigint "user_id"
     t.bigint "station_id"
-    t.integer "rating", null: false
-    t.string "title", null: false
-    t.string "body", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["station_id"], name: "index_reviews_on_station_id"

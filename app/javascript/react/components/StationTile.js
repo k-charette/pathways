@@ -2,7 +2,7 @@ import React from "react"
 
 const StationTile = props => {
   return(
-    <div> {props.name} </div>
+    <div>  </div>
   )
 }
 
