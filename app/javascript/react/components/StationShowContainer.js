@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react"
 import { Redirect } from 'react-router-dom'
 import StationFormContainer from "./StationFormContainer"
 import StationShow from "./StationShow"
+import MapContainer from "./MapContainer"
 import ReviewTile from "./ReviewTile"
 
 const StationShowContainer = props => {
@@ -83,6 +84,8 @@ return(
           id={station.id}
           name={station.name}
           capacity={station.capacity}
+          lat={station.lat}
+          lon={station.lon}
         />
       </div>
   </div>

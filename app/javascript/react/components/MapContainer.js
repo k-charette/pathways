@@ -35,10 +35,6 @@ const MapContainer = props => {
     })
   }
 
-  const pos = {
-    lat: 42.341814, lng: -71.090179
-  }
-
   return (
     <div>
       <Map
