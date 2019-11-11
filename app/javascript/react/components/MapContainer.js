@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react"
-import StationInfoTile from "./StationInfoTile"
 import { Map, GoogleApiWrapper, Marker, InfoWindow } from "google-maps-react"
+import StationInfoTile from "./StationInfoTile"
+import StationShow from "./StationShow"
 
 const MapContainer = props => {
 
@@ -54,11 +55,6 @@ const MapContainer = props => {
             anchor: new google.maps.Point(32,32),
             scaledSize: new google.maps.Size(40,40)
           }}
-        />
-        <Marker
-          onClick={markerClick}
-          name={'Colleges of the Fenway - Fenway at Avenue Louis Pasteur'}
-          position={{ lat: 42.34011512249236, lng: -71.10061883926392 }}
         />
         <InfoWindow
           marker={markerInfo.activeMarker}

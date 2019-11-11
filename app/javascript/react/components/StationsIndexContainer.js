@@ -4,6 +4,7 @@ import StationStatusTile from "./StationStatusTile"
 import StationFormContainer from "./StationFormContainer"
 import MapContainer from "./MapContainer"
 import StationInfoTile from "./StationInfoTile"
+import StationShow from "./StationShow"
 import bikeImage from "./bikes1.jpg"
 
 const StationsIndexContainer = props => {

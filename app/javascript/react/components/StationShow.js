@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react"
 import { Map, GoogleApiWrapper, Marker, InfoWindow } from "google-maps-react"
-
-import StationStatusTile from "./StationStatusTile"
+import MapContainer from "./MapContainer"
 
 const StationShow = props => {
 
@@ -33,7 +32,7 @@ return (
         <div>
         <p> Bikes: {props.capacity}</p>
 
-        <p> Available:</p>
+        <p> Available: {props.num_bikes_available}</p>
         </div>
     </div>
     <div className="station-page-map">
