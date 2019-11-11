@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react"
 import { Redirect } from 'react-router-dom'
 import StationFormContainer from "./StationFormContainer"
 import StationShow from "./StationShow"
+import MapContainer from "./MapContainer"
 import ReviewTile from "./ReviewTile"
 
 const StationShowContainer = props => {
@@ -76,14 +77,19 @@ const StationShowContainer = props => {
 
 return(
 <div className="grid-x grid-padding-x">
-  <div className="cell small-12">
-    <div>
-      <StationShow
-        key={station.id}
-        id={station.id}
-        name={station.name}
-      />
-    </div>
+  <div className="cell small-12 medium-6 large-6">
+      <div>
+        <StationShow
+          key={station.id}
+          id={station.id}
+          name={station.name}
+          capacity={station.capacity}
+          lat={station.lat}
+          lon={station.lon}
+        />
+      </div>
+  </div>
+  <div className="cell small-12 medium-6 large-6">
     <div className="callout primary form-comment-box">
       <StationFormContainer
         stationId={props.stationId}

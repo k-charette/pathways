@@ -10,11 +10,17 @@ $gray: #F8F9FA;
 $navajo: #FFE1A8;
 $dusty: #D62246;
 $sunset: #F25F5C;
+$cerulean: #00A8E8;
+$gunmetal: #2F323A;
+$ivory: #FFFFF2;
+$nickel: #727272;
 
 html, body {
-  background-color: $gray;
+  background-color: $gunmetal;
   max-width: 100%;
   overflow-x: hidden;
+  vertical-align: middle;
+  color: $ivory;
 }
 
 a {
@@ -22,12 +28,47 @@ a {
 }
 
 a:hover {
-  color: $light-cyan;
+  color: $gold;
 }
 
 .top-bar {
-  background: rgb(0, 0, 0);
+  background-color: $gunmetal;
   padding-top: 25px 5px 0 5px;
+  font-weight: 190;
+}
+
+.top-bar-section {
+  padding: 10px;
+  font-size: 20px;
+  margin: 5px;
+}
+
+.header-title-text {
+  float: center;
+  font-size: 50px;
+  font-weight: 190;
+}
+
+.station-info-text {
+  margin: auto;
+  font-size: 25px;
+  text-align: right;
+}
+
+.logo-container {
+
+}
+
+.sign-up {
+  border: 1px solid white;
+  padding: 2px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+.log-in {
+  margin-top: 10px;
+  padding-left: 10px;
 }
 
 .nav-bar {
@@ -39,8 +80,7 @@ a:hover {
   left: 0px;
   width: 100%;
   text-decoration: none;
-  background: rgb(0, 0, 0);
-  background: rgba(0, 0, 0, 0.7);
+  background-color: $gunmetal;
 }
 
 .flash {
@@ -53,15 +93,13 @@ a:hover {
 }
 
 .find-station {
-  display: inline-block;
+  display: block;
   justify-content: center;
-  font-size: 30px;
   height: auto;
-  color: white;
-  font-weight: 400;
+  color: $ivory;
   padding: 0px;
   position: absolute;
-  top: 130px;
+  top: 150px;
   left: 0px;
   text-align: center;
   width: 100%;
@@ -71,6 +109,10 @@ a:hover {
 		1px -1px 0 #000,
 		-1px 1px 0 #000,
 		1px 1px 0 #000;
+}
+
+.find-station-text {
+  font-weight: 340;
 }
 
 .station-names {
@@ -100,48 +142,43 @@ a:hover {
   max-width: 20%
 }
 
-.button {
-  border-radius: 10px;
-  background-color: $gray;
-}
-
 .front-page-image {
   position: relative;
+  justify-content: center;
   height: auto;
-  width: 100%;
-  background-size: cover;
+  width: 80%;
+  margin: 0 auto;
 }
 
-.what-can-you-do {
-  background-color: $gray;
-}
-
-.middle-box {
-  width: 50%;
-  padding: 0 14px;
-  height: auto;
-  margin: auto;
-  line-height: 38px;
-  align-items: center;
-}
-
-.middle-button .button {
-  margin-bottom: 0;
-  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+.button:hover {
+  background-color: $gunmetal;
 }
 
 .button {
-  margin-top: 10px;
+  margin-top: 5px;
   border-style: solid;
   background-color: black;
-  border-color: black;
+  border-color: $ivory;
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  background-color: $gunmetal;
+  font-weight: 170;
 }
 
 .btn-text {
   font-weight: 400;
   font-size: 20px;
+  font-weight: 190;
 }
 
 .map {
-  margin-top: 20px;
+  margin-top: 25px;
+}
+
+.flash {
+  background-color: $gunmetal;
+  color: white;
+  font-size: 20px;
+  font-weight: 800;
+  font-family: sans-serif;
 }

@@ -5,7 +5,6 @@ import StationFormContainer from "./StationFormContainer"
 import MapContainer from "./MapContainer"
 import StationInfoTile from "./StationInfoTile"
 import bikeImage from "./bikes1.jpg"
-import bikeImage2 from "./bikes2.jpg"
 
 const StationsIndexContainer = props => {
 
@@ -14,9 +13,11 @@ const StationsIndexContainer = props => {
       <img className="front-page-image" alt="image of bikes" src={bikeImage} />
       <h2>
         <span className="find-station">
-          <h1> Find a Bike Station </h1> <br/>
+          <h1 className="find-station-text"> Find a Bike Station </h1> <br/>
           <button className="button">
-            <span className="btn-text"> Get Started </span>
+            <div className="btn-text">
+              <Link to="/stations/1"> Get Started </Link>
+            </div>
           </button>
         </span>
       </h2>

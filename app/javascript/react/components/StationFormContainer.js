@@ -32,6 +32,7 @@ const StationFormContainer = props => {
       <div className="cell">
         <div className="form-box">
           <form onSubmit={formSubmit} className="review-form">
+            <h3>Leave a comment</h3>
             <label htmlFor="title">Title </label>
               <input
                 className="title-box"
@@ -41,13 +42,13 @@ const StationFormContainer = props => {
                 placeholder="Title"
                 value={newReview.title}
                 onChange={addNewReview}
-              /><label htmlFor="body"> Body </label>
-              <input
+              /><label htmlFor="body"> Comment </label>
+              <textarea
                 className="review-box"
                 id="body"
                 name="body"
                 type="text"
-                placeholder="Comment"
+                placeholder="What's on your mind?"
                 value={newReview.body}
                 onChange={addNewReview}
               />

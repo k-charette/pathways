@@ -9,13 +9,26 @@
 <body>
 
   <nav class="top-bar">
-    <h1 class="header-title"><a href="/" class="header-title-text">Pathways</a></h1>
-      <section class="top-bar-section">
+    <div class="logo-container">
+      <h1 class="header-title-text">
+        <%= link_to 'Pathways', root_path %>
+      </h1>
+      <div class="station-info-text">
+        <%= link_to 'Information', stations_path %>
+      </div>
+    </div>
+    <section class="top-bar-section">
           <%- if current_user -%>
-            <%= link_to 'Sign Out', destroy_user_session_path, method: :delete %>
+          <div class="log-out">
+            <%= link_to 'Log Out', destroy_user_session_path, method: :delete %>
+          </div>
           <%- else -%>
+        <div class="sign-up">
             <%= link_to 'Sign Up', new_user_registration_path %>
-            <%= link_to 'Sign In', new_user_session_path %>
+        </div>
+        <div class="log-in">
+            <%= link_to 'Log In', new_user_session_path %>
+        </div>
           <%- end -%>
       </section>
   </nav>
@@ -25,7 +38,6 @@
       <%= value %>
     </div>
   <%- end -%>
-
   <%= yield %>
 
   <%= javascript_include_tag 'application' %>
