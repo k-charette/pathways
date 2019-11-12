@@ -76,7 +76,7 @@ const StationShowContainer = props => {
 
 return(
 <div className="grid-x grid-padding-x">
-  <div className="cell small-12 medium-6 large-6">
+  <div className="cell small-12 medium-12 large-6">
     <div>
       <StationShow
         key={station.id}
@@ -88,7 +88,7 @@ return(
       />
     </div>
   </div>
-  <div className="cell small-12 medium-6 large-6">
+  <div className="cell small-12 medium-12 large-6">
     <div className="callout primary form-comment-box">
       <StationFormContainer
         stationId={props.stationId}

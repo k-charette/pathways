@@ -39,7 +39,7 @@ const StationFormContainer = props => {
                 id="title"
                 name="title"
                 type="text"
-                placeholder="Title"
+                placeholder="What's on your mind?"
                 value={newReview.title}
                 onChange={addNewReview}
               /><label htmlFor="body"> Comment </label>
@@ -48,7 +48,7 @@ const StationFormContainer = props => {
                 id="body"
                 name="body"
                 type="text"
-                placeholder="What's on your mind?"
+                placeholder="I'd like to leave a comment about..."
                 value={newReview.body}
                 onChange={addNewReview}
               />
