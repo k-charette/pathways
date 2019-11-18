@@ -1,5 +1,5 @@
 # Pathways
-Pathways is a bike share application that provides visitors with information about nearby bike stations. Users can sign up, search for a station and read or leave comments about any station. 
+Pathways is a bike share application that provides visitors with information about nearby bike stations. Users can sign up, search for a station, and leave or read comments about any station. 
 
 http://path-ways.herokuapp.com/
 
