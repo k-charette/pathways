@@ -1,7 +1,5 @@
 import React, { useState, useEffect } from "react"
 
-import StationTile from "./StationTile"
-
 const StationInfoTile = props => {
   const [stations, setStations] = useState({})
 
@@ -21,7 +19,7 @@ const StationInfoTile = props => {
         setStations(fetchedInfo)
       })
   },[])
-  
+
   return (
     <div>
 

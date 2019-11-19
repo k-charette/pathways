@@ -22,8 +22,6 @@ const StationsIndexContainer = props => {
           </button>
         </span>
       </h2>
-      <div className="cell small-6 large-6 map">
-      </div>
     </div>
   )
 }

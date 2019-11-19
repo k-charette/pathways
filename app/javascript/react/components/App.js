@@ -12,7 +12,7 @@ export const App = (props) => {
     <BrowserRouter>
       <Switch>
         <Route exact path="/" component={StationsIndexContainer}/>
-        <Route exact path="/stations" component={StationShowContainer}/>
+        <Route exact path="/stations" component={StationsIndexContainer}/>
         <Route exact path ="/stations/:id" component={StationShowContainer}/>
       </Switch>
     </BrowserRouter>

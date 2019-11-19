@@ -64,6 +64,7 @@ const StationShowContainer = props => {
   }
 
   let reviewTile = reviews.map(review => {
+    const formatDate = new Date(review.created_at).toDateString()
     return (
       <ReviewTile
         key={review.id}
@@ -71,6 +72,7 @@ const StationShowContainer = props => {
         rating={review.rating}
         title={review.title}
         body={review.body}
+        formatDate={formatDate}
       />
     )
   })
