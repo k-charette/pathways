@@ -17,13 +17,12 @@ const StationsIndexContainer = props => {
           <h1 className="find-station-text"> Find a Bike Station </h1> <br/>
           <button className="button">
             <div className="btn-text">
-              <Link to="/stations/1"> Get Started </Link>
+              <a href="/users/sign_up"> Get Started </a>
             </div>
           </button>
         </span>
       </h2>
       <div className="cell small-6 large-6 map">
-        <MapContainer />
       </div>
     </div>
   )

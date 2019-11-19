@@ -1,6 +1,7 @@
 @import 'foundation';
 @import 'util/color';
 @include add-foundation-colors;
+$ivory: #FFFFF2;
 
 .review-container {
   border: 1px solid black;
@@ -53,4 +54,5 @@ h3 {
 
 .info-text {
   text-decoration: underline;
+  color: $ivory;
 }

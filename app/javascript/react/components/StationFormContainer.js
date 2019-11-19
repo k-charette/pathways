@@ -33,7 +33,7 @@ const StationFormContainer = props => {
         <div className="form-box">
           <form onSubmit={formSubmit} className="review-form">
             <h3>Leave a comment</h3>
-            <label htmlFor="title">Title </label>
+            <label htmlFor="title"> </label>
               <input
                 className="title-box"
                 id="title"
@@ -42,7 +42,8 @@ const StationFormContainer = props => {
                 placeholder="What's on your mind?"
                 value={newReview.title}
                 onChange={addNewReview}
-              /><label htmlFor="body"> Comment </label>
+              />
+            <label htmlFor="body"></label>
               <textarea
                 className="review-box"
                 id="body"

@@ -12,11 +12,9 @@ const MapContainer = props => {
   })
 
   const mapStyles = {
-    width: "70%",
+    width: "47%",
     height: "55%",
-    border: "1px solid #000",
-    margin: "auto",
-    position: "relative"
+    border: "1px solid #000"
   }
 
   const mapClick = (props) => {
@@ -41,15 +39,15 @@ const MapContainer = props => {
       <Map
         google={props.google}
         onClick={mapClick}
-        zoom={13}
+        zoom={16}
         style={mapStyles}
-        initialCenter={{ lat: 42.361488, lng: -71.070264 }}
+        initialCenter={{ lat: props.lat, lng: props.lon }}
       >
         <Marker
           className="marker"
           onClick={markerClick}
-          name={'Tremont St at E Berkeley St'}
-          position={{ lat: 42.345392, lng: -71.069616 }}
+          name={props.name}
+          position={{ lat: props.lat, lng: props.lon }}
           icon={{
             url: "https://image.flaticon.com/icons/png/128/130/130276.png",
             anchor: new google.maps.Point(32,32),
@@ -60,8 +58,9 @@ const MapContainer = props => {
           marker={markerInfo.activeMarker}
           visible={markerInfo.showingInfoWindow}
         >
-          <div className="station-info-box">
-            <p> {markerInfo.selectedPlace.name} </p>
+          <div className="station-info-box station-popup-box">
+          <p> {markerInfo.selectedPlace.name} </p>
+          <p> Bikes - { props.capacity } </p>
           </div>
         </InfoWindow>
       </Map>

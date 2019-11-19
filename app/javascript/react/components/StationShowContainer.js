@@ -3,6 +3,7 @@ import { Redirect } from 'react-router-dom'
 import StationFormContainer from "./StationFormContainer"
 import StationShow from "./StationShow"
 import ReviewTile from "./ReviewTile"
+import MapContainer from "./MapContainer"
 
 const StationShowContainer = props => {
   const [station, setStation] = useState({})
@@ -78,7 +79,17 @@ return(
 <div className="grid-x grid-padding-x">
   <div className="cell small-12 medium-12 large-6">
     <div>
-      <StationShow
+    <StationShow
+      key={station.id}
+      id={station.id}
+      name={station.name}
+      capacity={station.capacity}
+      lat={station.lat}
+      lon={station.lon}
+    />
+    </div>
+    <div>
+      <MapContainer
         key={station.id}
         id={station.id}
         name={station.name}
