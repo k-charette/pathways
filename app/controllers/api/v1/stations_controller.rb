@@ -16,6 +16,14 @@ class Api::V1::StationsController < ApplicationController
       capacity = station["capacity"]
     end
 
+    Station.create(
+      external_id: external_id,
+      name: name,
+      lat: lat,
+      lon: lon,
+      capacity: capacity
+    )
+
     render json: stationInfo
   end
 
@@ -25,6 +33,6 @@ class Api::V1::StationsController < ApplicationController
   end
 
   def search
-    
+
   end
 end
