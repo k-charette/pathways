@@ -62,5 +62,8 @@ yarn start
   <li>
     Upvote/Downvote comments.
   </li>
+ <li>
+    Users to add pictures.
+  </li>
 </ul>
 
