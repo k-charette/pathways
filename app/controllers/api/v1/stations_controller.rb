@@ -15,16 +15,8 @@ class Api::V1::StationsController < ApplicationController
       lon = station["lon"]
       capacity = station["capacity"]
     end
-
-    Station.create(
-      external_id: external_id,
-      name: name,
-      lat: lat,
-      lon: lon,
-      capacity: capacity
-    )
-
-    render json: stationInfo
+    
+    render json: Station.all
   end
 
   def show
