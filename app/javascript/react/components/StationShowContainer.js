@@ -2,8 +2,8 @@ import React, { useState, useEffect } from "react"
 import { Redirect } from 'react-router-dom'
 import StationFormContainer from "./StationFormContainer"
 import StationShow from "./StationShow"
-import MapContainer from "./MapContainer"
 import ReviewTile from "./ReviewTile"
+import MapContainer from "./MapContainer"
 
 const StationShowContainer = props => {
   const [station, setStation] = useState({})
@@ -64,6 +64,7 @@ const StationShowContainer = props => {
   }
 
   let reviewTile = reviews.map(review => {
+    const formatDate = new Date(review.created_at).toDateString()
     return (
       <ReviewTile
         key={review.id}
@@ -71,25 +72,36 @@ const StationShowContainer = props => {
         rating={review.rating}
         title={review.title}
         body={review.body}
+        formatDate={formatDate}
       />
     )
   })
 
 return(
 <div className="grid-x grid-padding-x">
-  <div className="cell small-12 medium-6 large-6">
-      <div>
-        <StationShow
-          key={station.id}
-          id={station.id}
-          name={station.name}
-          capacity={station.capacity}
-          lat={station.lat}
-          lon={station.lon}
-        />
-      </div>
+  <div className="cell small-12 medium-12 large-6">
+    <div>
+    <StationShow
+      key={station.id}
+      id={station.id}
+      name={station.name}
+      capacity={station.capacity}
+      lat={station.lat}
+      lon={station.lon}
+    />
+    </div>
+    <div>
+      <MapContainer
+        key={station.id}
+        id={station.id}
+        name={station.name}
+        capacity={station.capacity}
+        lat={station.lat}
+        lon={station.lon}
+      />
+    </div>
   </div>
-  <div className="cell small-12 medium-6 large-6">
+  <div className="cell small-12 medium-12 large-6">
     <div className="callout primary form-comment-box">
       <StationFormContainer
         stationId={props.stationId}

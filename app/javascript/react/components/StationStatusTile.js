@@ -28,7 +28,7 @@ const StationStatusTile = props => {
     stationAvailability =  stationsStatus.data.stations.map((station) => {
     const lastUpdated = new Date(station.last_reported * 1000).toDateString()
       return(
-        <StationStatusTile
+        <StationShow
           key={station.station_id}
           id={station.station_id}
           num_bikes_available={station.num_bikes_available}

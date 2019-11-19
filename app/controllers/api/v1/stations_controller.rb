@@ -20,7 +20,11 @@ class Api::V1::StationsController < ApplicationController
   end
 
   def show
-    station = Station.find(params["id"])
+    station = Station.find(params[:id])
     render json: {station:station, reviews:station.reviews}
+  end
+
+  def search
+    
   end
 end

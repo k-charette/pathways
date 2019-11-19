@@ -13,23 +13,34 @@
       <h1 class="header-title-text">
         <%= link_to 'Pathways', root_path %>
       </h1>
-      <div class="station-info-text">
-        <%= link_to 'Information', stations_path %>
-      </div>
     </div>
-    <section class="top-bar-section">
-          <%- if current_user -%>
-          <div class="log-out">
-            <%= link_to 'Log Out', destroy_user_session_path, method: :delete %>
+    <div class="middle-nav-section">
+      Search for a Station
+      <%= form_for "/stations", method: "GET" do |f| %>
+        <div class ="grid-x">
+          <div class="cell large-6 medium-12 small-12 search-field">
+            <%= f.text_field :name %>
           </div>
-          <%- else -%>
-        <div class="sign-up">
-            <%= link_to 'Sign Up', new_user_registration_path %>
+          <div class="cell large-6 medium-12 small-12">
+            <%= f.submit "Search", :class => 'search-button' %>
+          </div>
         </div>
-        <div class="log-in">
-            <%= link_to 'Log In', new_user_session_path %>
-        </div>
-          <%- end -%>
+      <% end %>
+    </div>
+
+    <section class="top-bar-section">
+      <%- if current_user -%>
+      <div class="log-out">
+        <%= link_to 'Log Out', destroy_user_session_path, method: :delete %>
+      </div>
+        <%- else -%>
+      <div class="sign-up">
+        <%= link_to 'Sign Up', new_user_registration_path %>
+      </div>
+      <div class="log-in">
+        <%= link_to 'Log In', new_user_session_path %>
+      </div>
+        <%- end -%>
       </section>
   </nav>
 

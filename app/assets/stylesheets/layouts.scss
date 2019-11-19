@@ -182,3 +182,20 @@ a:hover {
   font-weight: 800;
   font-family: sans-serif;
 }
+
+.search-button {
+  margin-left: 5px;
+  background-color: $gunmetal;
+  color: $ivory;
+  font-weight: 190;
+  font-size: 20px;
+}
+
+.search-button:hover {
+  color: $gold;
+}
+
+.search-field {
+  height: auto;
+  width: 70%;
+}
