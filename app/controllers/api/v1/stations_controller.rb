@@ -15,7 +15,7 @@ class Api::V1::StationsController < ApplicationController
       lon = station["lon"]
       capacity = station["capacity"]
     end
-    
+
     render json: Station.all
   end
 
