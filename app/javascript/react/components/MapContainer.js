@@ -41,13 +41,13 @@ const MapContainer = props => {
         onClick={mapClick}
         zoom={17}
         style={mapStyles}
-        initialCenter={{ lat: props.lat, lng: props.lon }}
+        initialCenter={{ lat: props.latitude, lng: props.longitude }}
       >
         <Marker
           className="marker"
           onClick={markerClick}
           name={props.name}
-          position={{ lat: props.lat, lng: props.lon }}
+          position={{ lat: props.latitude, lng: props.longitude }}
           icon={{
             url: "https://image.flaticon.com/icons/png/128/130/130276.png",
             anchor: new google.maps.Point(32,32),

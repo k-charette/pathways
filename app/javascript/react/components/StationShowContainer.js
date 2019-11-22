@@ -86,8 +86,8 @@ return(
         id={station.id}
         name={station.name}
         capacity={station.capacity}
-        lat={station.lat}
-        lon={station.lon}
+        latitude={station.latitude}
+        longitude={station.longitude}
       />
     </div>
     <div>
@@ -96,8 +96,8 @@ return(
         id={station.id}
         name={station.name}
         capacity={station.capacity}
-        lat={station.lat}
-        lon={station.lon}
+        latitude={station.latitude}
+        longitude={station.longitude}
       />
     </div>
   </div>
