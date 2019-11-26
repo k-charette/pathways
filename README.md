@@ -25,7 +25,7 @@ http://path-ways.herokuapp.com/
     Faraday 0.9.2
   </li>
   <li>
-    Blue Bikes Developers - https://www.bluebikes.com/system-data
+    Blue Bikes System Data - https://www.bluebikes.com/system-data
   </li>
     
 </ul>
@@ -61,6 +61,9 @@ yarn start
   </li>
   <li>
     Upvote/Downvote comments.
+  </li>
+ <li>
+    Users to add pictures.
   </li>
 </ul>
 
