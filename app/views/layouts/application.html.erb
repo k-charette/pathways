@@ -19,7 +19,7 @@
       <%= form_for "/stations", method: "GET" do |f| %>
         <div class ="grid-x">
           <div class="cell large-6 medium-12 small-12 search-field">
-            <%= f.text_field :name %>
+            <%= f.text_field :search, placeholder: "Location" %>
           </div>
           <div class="cell large-6 medium-12 small-12">
             <%= f.submit "Search", :class => 'search-button' %>

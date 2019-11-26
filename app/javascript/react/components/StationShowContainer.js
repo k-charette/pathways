@@ -102,7 +102,7 @@ return(
     </div>
   </div>
   <div className="cell small-12 medium-12 large-6">
-    <div className="callout primary form-comment-box">
+    <div className="callout form-comment-box">
       <StationFormContainer
         stationId={props.stationId}
         postNewReview={postNewReview}

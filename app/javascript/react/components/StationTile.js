@@ -1,8 +1,11 @@
-import React from "react"
+import React, { useState, useEffect} from "react"
 
 const StationTile = props => {
+
   return(
-    <div>  </div>
+    <div>
+      {props.name}
+    </div>
   )
 }
 

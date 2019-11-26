@@ -2,6 +2,11 @@ class Api::V1::StationsController < ApplicationController
   protect_from_forgery unless: -> { request.format.json? }
 
   def index
+    if params["/stations"]
+      search_results = Station.near(params["/stations"]["search"], 1)
+      search_results.first
+    end
+
     url = "https://gbfs.bluebikes.com/gbfs/en/station_information.json"
     response = Faraday.get("#{url}")
     parsed_response = JSON.parse(response.body)
@@ -22,9 +27,5 @@ class Api::V1::StationsController < ApplicationController
   def show
     station = Station.find(params[:id])
     render json: {station:station, reviews:station.reviews}
-  end
-
-  def search
-
   end
 end
