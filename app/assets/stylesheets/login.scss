@@ -1,0 +1,19 @@
+@import 'foundation';
+@import 'util/color';
+@include add-foundation-colors;
+
+.field, .actions, .sign-up-text, .login-text, .bottom-links{
+  margin: auto;
+  max-width: 50%;
+  padding-top: 5px;
+  margin-top: 5px;
+}
+
+label {
+  color: white;
+  font-size: 20px;
+}
+
+input {
+  font-size: 25px;
+}

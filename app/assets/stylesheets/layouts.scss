@@ -22,6 +22,7 @@ html, body {
   margin-bottom: 0px;
   vertical-align: middle;
   color: $ivory;
+  font-family: 'Fjalla One', sans-serif;
 }
 
 a {
@@ -30,6 +31,10 @@ a {
 
 a:hover {
   color: $gold;
+}
+
+h1, h2 {
+  font-family: 'Fjalla One', sans-serif;
 }
 
 .top-bar {
@@ -48,6 +53,7 @@ a:hover {
   float: center;
   font-size: 50px;
   font-weight: 190;
+  font-family: 'Fjalla One', sans-serif;
 }
 
 .station-info-text {
@@ -94,13 +100,14 @@ a:hover {
 }
 
 .find-station {
+  font-family: 'Fjalla One', sans-serif;
   display: block;
   justify-content: center;
   height: auto;
   color: $ivory;
   padding: 0px;
   position: absolute;
-  top: 150px;
+  margin-top: 50px;
   left: 0px;
   text-align: center;
   width: 100%;
@@ -113,7 +120,8 @@ a:hover {
 }
 
 .find-station-text {
-  font-weight: 340;
+  font-size: 60px;
+  color: $ivory;
 }
 
 .station-names {

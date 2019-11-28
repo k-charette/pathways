@@ -39,7 +39,7 @@ const MapContainer = props => {
       <Map
         google={props.google}
         onClick={mapClick}
-        zoom={17}
+        zoom={18}
         style={mapStyles}
         initialCenter={{ lat: props.latitude, lng: props.longitude }}
       >
