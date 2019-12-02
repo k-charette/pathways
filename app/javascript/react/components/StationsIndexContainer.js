@@ -11,6 +11,7 @@ import bikeImage from "./bikes1.jpg"
 
 const StationsIndexContainer = props => {
   const [stations, setStations] = useState([])
+  const [redirect, setRedirect] = useState(null)
 
     useEffect(() => {
       let search = ""
@@ -29,10 +30,18 @@ const StationsIndexContainer = props => {
       })
       .then(response => response.json())
       .then(body => {
-        setStations(body.stations)
+        if (body.stations) {
+          setStations(body.stations)
+        } else {
+          setRedirect(body.search_results)
+        }
       })
       .catch(error => console.error(`Error in fetch: ${error.message}`))
     }, [])
+
+    if (redirect) {
+      return <Redirect to='/stations/${redirect}' />
+    }
 
   return (
     <div className="grid-x grid-padding-x">

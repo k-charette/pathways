@@ -5,6 +5,10 @@ $ivory: #FFFFF2;
 $platinum: #E8EDDF;
 $light-gray: #CFDBD5;
 
+body {
+  font-family: 'Fjalla One', sans-serif;
+}
+
 textarea {
   min-height: 306px;
 }
@@ -41,7 +45,7 @@ textarea {
 }
 
 h3 {
-  font-weight: 170;
+  font-family: 'Fjalla One', sans-serif;
 }
 
 .station-info-box {

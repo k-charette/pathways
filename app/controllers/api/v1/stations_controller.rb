@@ -4,7 +4,13 @@ class Api::V1::StationsController < ApplicationController
   def index
     if params["/stations"]
       search_results = Station.near(params["/stations"]["search"], 1)
-      search_results = search_results.first
+      search_results = search_results.first.id
+    end
+
+    if search_results
+      render json: {search_results: search_results}
+    else
+      render json: Station.all
     end
 
     url = "https://gbfs.bluebikes.com/gbfs/en/station_information.json"
@@ -20,8 +26,6 @@ class Api::V1::StationsController < ApplicationController
       lon = station["lon"]
       capacity = station["capacity"]
     end
-
-    render json: Station.all
   end
 
   def show
