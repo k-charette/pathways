@@ -15,10 +15,10 @@ class Api::V1::StationsController < ApplicationController
       lon = station["lon"]
       capacity = station["capacity"]
     end
-    
+
     if params["/stations"]
       search_results = Station.near(params["/stations"]["search"], 1)
-      search_results = search_results.first.id
+      search_results = search_results.first
     end
 
     if search_results

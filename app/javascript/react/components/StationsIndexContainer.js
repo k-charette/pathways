@@ -11,7 +11,7 @@ import bikeImage from "./bikes1.jpg"
 
 const StationsIndexContainer = props => {
   const [stations, setStations] = useState([])
-  const [redirect, setRedirect] = useState(null)
+  const [redirect, setRedirect] = useState(false)
 
     useEffect(() => {
       let search = ""
@@ -33,14 +33,14 @@ const StationsIndexContainer = props => {
         if (body.stations) {
           setStations(body.stations)
         } else {
-          setRedirect(body.search_results)
+          setRedirect(body.id)
         }
       })
       .catch(error => console.error(`Error in fetch: ${error.message}`))
     }, [])
 
     if (redirect) {
-      return <Redirect to='/stations/${redirect}' />
+      return <Redirect to= {`/stations/${redirect}`} />
     }
 
   return (
