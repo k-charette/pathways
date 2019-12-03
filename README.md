@@ -25,6 +25,9 @@ http://path-ways.herokuapp.com/
     Faraday 0.9.2
   </li>
   <li>
+    Geocoder - 1.5
+  </li>
+  <li>
     Blue Bikes System Data - https://www.bluebikes.com/system-data
   </li>
     
