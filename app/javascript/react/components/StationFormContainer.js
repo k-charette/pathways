@@ -3,11 +3,32 @@ import { Link } from "react-router-dom"
 
 const StationFormContainer = props => {
   const [newReview, setNewReview] = useState({
-    rating: "",
+    rating: 0,
     title: "",
     body: "",
     stationId: props.stationId
   })
+
+  const handleStarClick = event => {
+    setNewReview({
+      ...newReview, rating: event.currentTarget.title
+    })
+  }
+
+  let stars = []
+
+  for (let i = 0; i < 5; i++) {
+    let starClass = 'fa fa-star '
+    if (i < Number.parseInt(newReview.rating)){
+      starClass += 'gold-star'
+    } else {
+      starClass += 'grey-star'
+    }
+    stars.push(
+      <i className={starClass} key={i} onClick={handleStarClick} title={i+1}></i>
+    )
+  }
+
 
   const addNewReview = (event) => {
     event.preventDefault()
@@ -54,6 +75,7 @@ const StationFormContainer = props => {
                 onChange={addNewReview}
               />
             <label htmlFor="rating"> Rating </label>
+              {stars}
               <input
                 className="rating-box"
                 id="rating"

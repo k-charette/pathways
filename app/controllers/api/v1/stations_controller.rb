@@ -16,6 +16,8 @@ class Api::V1::StationsController < ApplicationController
       capacity = station["capacity"]
     end
 
+    no_result = ""
+
     if params["/stations"]
       search_results = Station.near(params["/stations"]["search"], 1)
       search_results = search_results.first
@@ -24,7 +26,7 @@ class Api::V1::StationsController < ApplicationController
     if search_results
       render json: search_results
     else
-      render json: Station.all
+      render json: no_result
     end
   end
 

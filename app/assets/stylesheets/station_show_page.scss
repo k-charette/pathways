@@ -4,6 +4,7 @@
 $ivory: #FFFFF2;
 $platinum: #E8EDDF;
 $light-gray: #CFDBD5;
+$gold: #FFB400;
 
 body {
   font-family: 'Fjalla One', sans-serif;
@@ -70,4 +71,16 @@ h3 {
 .info-text {
   text-decoration: underline;
   color: white;
+}
+
+i.gold-star {
+  color: $gold;
+}
+
+i.grey-star{
+  color: black;
+}
+
+i.fa.fa-star {
+  margin: 0.2rem;
 }
