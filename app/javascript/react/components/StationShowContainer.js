@@ -8,7 +8,16 @@ import MapContainer from "./MapContainer"
 const StationShowContainer = props => {
   const [station, setStation] = useState({})
   const [reviews, setReviews] = useState([])
-  const [errors, setErrors] = useState({})
+  const [errorList, setErrorList] = useState([])
+
+  let errors
+  if (errorList.length > 0) {
+    errors = (
+      <div className="callout alert">
+        {errorList.join(" , ")}
+      </div>
+    )
+  }
 
   const stationId = props.match.params.id
 
@@ -57,7 +66,7 @@ const StationShowContainer = props => {
         if (body.station) {
             setReviews(body.reviews)
           } else {
-            setErrors(body.errors)
+            setErrorList(body.errors)
           }
         })
       .catch(error => console.error(`Error in fetch: ${error.message}`))
@@ -103,6 +112,7 @@ return(
   </div>
   <div className="cell small-12 medium-12 large-6">
     <div className="callout form-comment-box">
+    {errors}
       <StationFormContainer
         stationId={props.stationId}
         postNewReview={postNewReview}

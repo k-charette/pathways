@@ -9,7 +9,7 @@ class Api::V1::ReviewsController < ApplicationController
     if new_review.save
       render json: {station:station, reviews:station.reviews}
     else
-      render json: new_review.errors.full_messages
+      render json: {'errors': new_review.errors.full_messages}
     end
   end
 

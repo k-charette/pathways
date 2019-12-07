@@ -42,7 +42,7 @@ const StationFormContainer = props => {
     let reviewPayload = newReview
     props.postNewReview(reviewPayload)
     setNewReview({
-      rating: "",
+      rating: 0,
       title: "",
       body: "",
     })
@@ -74,17 +74,8 @@ const StationFormContainer = props => {
                 value={newReview.body}
                 onChange={addNewReview}
               />
-            <label htmlFor="rating"> Rating </label>
+            <label htmlFor="rating" className="rating-text"> Rating </label>
               {stars}
-              <input
-                className="rating-box"
-                id="rating"
-                name="rating"
-                type="number"
-                placeholder= "0"
-                value={newReview.rating}
-                onChange={addNewReview}
-              />
             <div className="button-box">
               <input
                 className="button"
