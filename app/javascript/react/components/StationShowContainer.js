@@ -12,6 +12,15 @@ const StationShowContainer = props => {
 
   const stationId = props.match.params.id
 
+  let errors
+  if (errorList.length > 0) {
+    errors = (
+      <div className="callout alert">
+        {errorList.join(" , ")}
+      </div>
+    )
+  }
+
   useEffect(() => {
     fetch(`/api/v1/stations/${stationId}`)
     .then((response) => {
@@ -103,6 +112,7 @@ return(
   </div>
   <div className="cell small-12 medium-12 large-6">
     <div className="callout form-comment-box">
+    {errors}
       <StationFormContainer
         stationId={props.stationId}
         postNewReview={postNewReview}
