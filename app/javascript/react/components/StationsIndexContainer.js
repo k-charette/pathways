@@ -9,6 +9,7 @@ import bikeImage from "./bikes1.jpg"
 
 const StationsIndexContainer = props => {
   const [stations, setStations] = useState([])
+  const [noResult, setNoResult] = useState("")
   const [redirect, setRedirect] = useState(false)
 
     useEffect(() => {
@@ -28,12 +29,10 @@ const StationsIndexContainer = props => {
       })
       .then(response => response.json())
       .then(body => {
-        if (body.stations) {
-          setStations(body.stations)
-        } else {
+          setNoResult(body.no_result)
           setRedirect(body.id)
         }
-      })
+      )
       .catch(error => console.error(`Error in fetch: ${error.message}`))
     }, [])
 
@@ -43,6 +42,7 @@ const StationsIndexContainer = props => {
 
   return (
     <div className="grid-x grid-padding-x">
+      <p className="cell small-12 medium-12 large-12 no-result text-center"> {noResult} </p> 
       <img className="front-page-image" alt="image of bikes" src={bikeImage} />
       <h2>
         <span className="find-station">
