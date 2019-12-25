@@ -1,10 +1,8 @@
 import React from "react"
 import { Route, Switch, BrowserRouter } from "react-router-dom"
 import StationsIndexContainer from "./StationsIndexContainer"
-import StationFormContainer from "./StationFormContainer"
 import StationShowContainer from "./StationShowContainer"
-import StationInfoTile from "./StationInfoTile"
-import MapContainer from "./MapContainer"
+import UserShowContainer from "./UserShowContainer"
 
 export const App = (props) => {
   return (
@@ -13,6 +11,7 @@ export const App = (props) => {
         <Route exact path="/" component={StationsIndexContainer}/>
         <Route exact path="/stations" component={StationsIndexContainer}/>
         <Route exact path ="/stations/:id" component={StationShowContainer}/>
+        <Route exact path ="/users/:id" component={UserShowContainer}/>
       </Switch>
     </BrowserRouter>
   )
