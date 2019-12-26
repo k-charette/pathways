@@ -2,11 +2,15 @@
 @import 'util/color';
 @include add-foundation-colors;
 
-.field, .actions, .sign-up-text, .login-text, .bottom-links{
+.field, .actions, .sign-up-text, .login-text, .bottom-links, .actions, .field-bottom{
   margin: auto;
   max-width: 50%;
   padding-top: 5px;
   margin-top: 5px;
+}
+
+.field-bottom {
+  padding-bottom: 20px;
 }
 
 label {

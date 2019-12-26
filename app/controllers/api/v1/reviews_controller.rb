@@ -6,6 +6,7 @@ class Api::V1::ReviewsController < ApplicationController
     station = Station.find(params[:station_id])
     new_review.station = station
     new_review.user = current_user
+    
     if new_review.save
       render json: {station:station, reviews:station.reviews}
     else

@@ -1,14 +1,12 @@
 class Api::V1::UsersController < ApplicationController
-    protect_from_forgery unless: -> { request.format.json? }
-    def index
-        users = User.all
-        users.reverse
-        render json: users
+
+    def index 
+ 
     end
 
     def show
         user = User.find(params[:id])
         render json: user
     end
-end
+  end
   

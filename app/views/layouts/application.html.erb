@@ -16,27 +16,26 @@
         <%= link_to 'Pathways', root_path %>
       </h1>
     </div>
-    <div class="middle-nav-section">
-
-      <%= form_for "/stations", method: "GET" do |f| %>
-        <div class ="grid-x">
-          <div class="cell large-8 medium-6 small-12 search-field">
-            <%= f.text_field :search, placeholder: "Landmark or Location" %>
-          </div>
-          <section>
-          <div class="cell large-8 medium-6 small-12">
-            <%= f.submit "Search", :class => 'search-button' %>
-          </div>
-          </section>
-        </div>
+      <ul class="menu header-nav">
+        <%= form_for "/stations", method: "GET" do |f| %>
+            <li class ="header-link">
+              <%= f.text_field :search, placeholder: "Landmark or Location" %>
+              <%= f.submit "Search", :class => 'search-button' %>
+            </li>
+        <% end %>
+      </ul>
+      <ul class="menu header-nav">
+      <% if current_user%>
+        <li class="header-link text-center">
+          <a href="/users/<%=current_user.id %>" title="My Profile">
+            <span> My Profile</span>
+          </a>
+        </li>
+        <li class="header-link text-center">
+          <span> <%= link_to 'Edit Profile', edit_user_registration_path %> </span>
+        </li>
       <% end %>
-    </div>
-
-    <% if current_user%>
-      <a href="/users/<%=current_user.id %>" title="My Profile">
-        <span> My Profile</span>
-      </a>
-    <% end %>
+      </ul>
 
     <section class="top-bar-section">
       <%- if current_user -%>
@@ -51,7 +50,7 @@
         <%= link_to 'Log In', new_user_session_path %>
       </div>
         <%- end -%>
-      </section>
+    </section>
   </nav>
 
   <%- flash.each do |key, value| -%>

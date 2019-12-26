@@ -2,6 +2,7 @@ class Api::V1::StationsController < ApplicationController
   protect_from_forgery unless: -> { request.format.json? }
 
   def index
+    users = User.all
     url = "https://gbfs.bluebikes.com/gbfs/en/station_information.json"
     response = Faraday.get("#{url}")
     parsed_response = JSON.parse(response.body)
